@@ -4,7 +4,7 @@ An electron app to show your friends on discord what switch games you're playing
 
 ### Downloads
 
-Download the mort recent releases [here](https://github.com/Azure-Agst/switchrpc/releases)!
+Download the most recent releases [here](https://github.com/Azure-Agst/switchrpc/releases)!
 
 ### Build
 
