@@ -5,6 +5,7 @@ window.game = "home";
 window.gamename = "Home Menu";
 window.gamestate = "null";
 var array, posi_states = null;
+const gamestate = document.getElementById('gamestate');
 
 function updateGame() {
   console.log(document.getElementById('gameselect').value);
@@ -41,18 +42,18 @@ function updateGame() {
 };
 
 function updateDrop() {
-  document.getElementById("gamestate").innerHTML = "";
+  gamestate.innerHTML = "";
   //console.log("cleared.")
   for (i=0;i<gamearray.length;i++) {
     var opt = document.createElement('option');
     opt.value = gamearray[i].code;
     opt.appendChild(document.createTextNode(gamearray[i].state));
     //console.log(opt);
-    document.getElementById("gamestate").appendChild(opt);
+    gamestate.appendChild(opt);
   };
+  updateState();
 }
 
 function updateState() {
-  gamestate = document.getElementById('gamestate');
   window.gamestate = gamestate[gamestate.selectedIndex].innerHTML;
 }
