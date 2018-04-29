@@ -18,7 +18,7 @@ function createWindow() {
     titleBarStyle: 'hidden',
   });
 
-  mainWindow.setMenu(null);
+  //mainWindow.setMenu(null);
 
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
@@ -54,17 +54,40 @@ async function setActivity() {
 
   var gameid = await mainWindow.webContents.executeJavaScript('window.game');
   var gamename = await mainWindow.webContents.executeJavaScript('window.gamename');
+  var gamestate = await mainWindow.webContents.executeJavaScript('window.gamestate');
 
-  rpc.setActivity({
-    details: `playing ${gamename}`,
-    //state: 'in slither party',
-    startTimestamp,
-    largeImageKey: `${gameid}`,
-    largeImageText: `${gamename}`,
-    smallImageKey: 'switchlogo',
-    smallImageText: 'Nintendo Switch',
-    instance: false,
-  });
+  if (gameid == "home") {
+    rpc.setActivity({
+      details: `At Home Menu`,
+      startTimestamp,
+      largeImageKey: `${gameid}`,
+      largeImageText: `${gamename}`,
+      smallImageKey: 'switchlogo',
+      smallImageText: 'Nintendo Switch',
+      instance: false,
+    });
+  } else if (gamestate !== "Don't Display State", "null", null) {
+    rpc.setActivity({
+      details: `Playing ${gamename}`,
+      state: gamestate,
+      startTimestamp,
+      largeImageKey: `${gameid}`,
+      largeImageText: `${gamename}`,
+      smallImageKey: 'switchlogo',
+      smallImageText: 'Nintendo Switch',
+      instance: false,
+    });
+  } else {
+    rpc.setActivity({
+      details: `Playing ${gamename}`,
+      startTimestamp,
+      largeImageKey: `${gameid}`,
+      largeImageText: `${gamename}`,
+      smallImageKey: 'switchlogo',
+      smallImageText: 'Nintendo Switch',
+      instance: false,
+    });
+  }
 }
 
 rpc.on('ready', () => {

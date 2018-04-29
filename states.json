@@ -1,0 +1,17 @@
+{
+  "home": [
+    {"code":"null","state":"N/A"}
+  ],
+  "splatoon": [
+    {"code":"null","state":"Don't Display State"},
+    {"code":"quickplay","state":"Playing Turf War"},
+    {"code":"ranked","state":"Playing Ranked Battles"},
+    {"code":"league","state":"Playing League Battles"},
+    {"code":"salmon","state":"Playing Salmon Run"},
+    {"code":"solo","state":"Playing Campaign"}
+  ],
+  "mk8d": [
+    {"code":"null","state":"Don't Display State"},
+    {"code":"quickplay","state":"racing"}
+  ]
+}

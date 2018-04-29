@@ -37,7 +37,7 @@ p.end {
   text-align: center;
 }
 
-#gameselect, #button {
+#gameselect, #gamestate, #button {
   margin: 5px;
   margin-left: 20%;
   text-align:center;
