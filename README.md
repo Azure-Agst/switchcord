@@ -1,8 +1,11 @@
 ![Banner](./img/banner.png)
+=====
 
-An electron app to show your friends on discord what switch games you're playing!
+![license](https://img.shields.io/badge/License-GNU-brightgreen.svg) ![dep](https://img.shields.io/david/Azure-Agst/switchrpc.svg) ![devdep](https://img.shields.io/david/dev/Azure-Agst/switchrpc.svg) [![paypal](https://img.shields.io/badge/Donate-paypal.me-blue.svg)](https://paypal.me/AzureAugust)
 
-![License](https://img.shields.io/badge/License-GNU-brightgreen.svg)
+An electron app to show your friends on Discord what Nintendo Switch games you're playing!
+
+If you like the app and have an idea, do consider forking and making a pull request! Or, consider [buying me a cup of coffee](https://paypal.me/AzureAugust) to keep the development moving!
 
 ### Downloads
 
@@ -11,7 +14,10 @@ Download the most recent releases [here](https://github.com/Azure-Agst/switchrpc
 ### Build
 
 ```
-$ git clone https://github.com/Azure-Agst/switchrpc.git && cd switchrpc
+$ git clone https://github.com/Azure-Agst/switchrpc.git && cd switchrpc/app
 $ npm install
 $ npm start
 ```
+=====
+
+SwitchRPC (c) 2018 @Azure_Agst, Nintendo Switch is a trademark of Nintendo.
