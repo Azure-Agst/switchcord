@@ -66,7 +66,10 @@ async function setActivity() {
       smallImageText: 'Nintendo Switch',
       instance: false,
     });
-  } else if (gamestate == "Don't Display State" || gamestate == "null" || gamestate == null) {
+  } else if (gamestate == "Don't Display State" ||
+             gamestate == "Solo Play" ||
+             gamestate == "null" || 
+             gamestate == null) {
     rpc.setActivity({
       details: `Playing ${gamename}`,
       startTimestamp,

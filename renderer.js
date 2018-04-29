@@ -24,12 +24,14 @@ function updateGame() {
       break;
     case "botw":
       window.game = "botw";
-      window.gamename = "BotW";
+      window.gamename = "Zelda: BotW";
+      gamearray = arrays.botw;
       updateDrop();
       break;
     case "stardew":
       window.game = "stardew";
-      window.gamename = "Stardew";
+      window.gamename = "Stardew Valley";
+      gamearray = arrays.stardew;
       updateDrop();
       break;
     case "home":

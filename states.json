@@ -4,14 +4,22 @@
   ],
   "splatoon": [
     {"code":"null","state":"Don't Display State"},
-    {"code":"quickplay","state":"Playing Turf War"},
-    {"code":"ranked","state":"Playing Ranked Battles"},
-    {"code":"league","state":"Playing League Battles"},
-    {"code":"salmon","state":"Playing Salmon Run"},
-    {"code":"solo","state":"Playing Campaign"}
+    {"code":"quickplay","state":"Turf War"},
+    {"code":"ranked","state":"Ranked Battles"},
+    {"code":"league","state":"League Battles"},
+    {"code":"salmon","state":"Salmon Run"},
+    {"code":"solo","state":"Solo Campaign"}
   ],
   "mk8d": [
     {"code":"null","state":"Don't Display State"},
-    {"code":"quickplay","state":"racing"}
+    {"code":"onlsolo","state":"Online [Solo]"},
+    {"code":"onlduo","state":"Online [Duo]"},
+    {"code":"onltourn","state":"Online [Tournament]"}
+  ],
+  "botw": [
+    {"code":"solo","state":"Solo Play"}
+  ],
+  "stardew": [
+    {"code":"solo","state":"Solo Play"}
   ]
 }
