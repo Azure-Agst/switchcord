@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu, Tray } = require('electron');
 const path = require('path');
 const url = require('url');
 const DiscordRPC = require('discord-rpc');
@@ -10,12 +10,15 @@ const ClientId = '439883639539499019';
 
 let mainWindow;
 
+let tray = null;
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 340,
     height: 380,
     resizable: false,
     titleBarStyle: 'hidden',
+    icon: './switch.png'
   });
 
   //mainWindow.setMenu(null);
@@ -26,15 +29,34 @@ function createWindow() {
     slashes: true,
   }));
 
-  mainWindow.on('closed', () => {
-    mainWindow = null;
+  mainWindow.on('close', function (event) {
+    if(!app.isQuiting){
+        event.preventDefault();
+        mainWindow.hide();
+    }
+
+    return false;
   });
 }
 
-app.on('ready', createWindow);
-
-app.on('window-all-closed', () => {
-  app.quit();
+app.on('ready', () => {
+  tray = new Tray('./switch.png')
+  const contextMenu = Menu.buildFromTemplate([
+    {label: 'Open App', type: 'normal', click: function(){
+      mainWindow.show();
+    }},
+    {label: 'Quit', type: 'normal', click: function(){
+      app.isQuitting = true;
+      tray.destroy();
+      app.quit();
+    }}
+  ])
+  tray.setToolTip('SwitchRPC');
+  tray.setContextMenu(contextMenu);
+  tray.on('click', () => {
+    mainWindow.show();
+  });
+  createWindow();
 });
 
 app.on('activate', () => {
@@ -68,7 +90,7 @@ async function setActivity() {
     });
   } else if (gamestate == "Don't Display State" ||
              gamestate == "Solo Play" ||
-             gamestate == "null" || 
+             gamestate == "null" ||
              gamestate == null) {
     rpc.setActivity({
       details: `Playing ${gamename}`,
