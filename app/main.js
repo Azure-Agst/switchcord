@@ -30,7 +30,7 @@ function createWindow() {
   }));
 
   mainWindow.on('close', function (event) {
-    if(!app.isQuiting){
+    if(!app.isQuitting){
         event.preventDefault();
         mainWindow.hide();
     }
