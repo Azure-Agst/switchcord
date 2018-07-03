@@ -5,26 +5,31 @@ const path = require('path');
 const url = require('url');
 const DiscordRPC = require('discord-rpc');
 
+const smallicon = path.join(__dirname, 'resources/switch.png');
+
 // don't change the client id if you want this example to work
 const ClientId = '439883639539499019';
 
-let mainWindow;
+let mainWindow, subWindow;
 
 let tray = null;
 
-function createWindow() {
+// ============================================================================
+// main window !!!!!
+
+function createMainWindow() {
   mainWindow = new BrowserWindow({
     width: 340,
     height: 380,
     resizable: false,
     titleBarStyle: 'hidden',
-    icon: './switch.png'
+    icon: smallicon
   });
 
   //mainWindow.setMenu(null);
 
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, 'resources/main/index.html'),
     protocol: 'file:',
     slashes: true,
   }));
@@ -39,14 +44,45 @@ function createWindow() {
   });
 }
 
+// ============================================================================
+// game chooser window!
+
+function createSubWindow() {
+  subWindow = new BrowserWindow({
+    width: 680,
+    height: 400,
+    resizable: false,
+    titleBarStyle: 'hidden',
+    icon: smallicon
+  });
+
+  subWindow.setMenu(null);
+
+  subWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'resources/sub/index.html'),
+    protocol: 'file:',
+    slashes: true,
+  }));
+
+  subWindow.on('close', function (event) {
+    event.preventDefault();
+    mainWindow.reload();
+    subWindow.hide();
+  });
+}
+
+// ============================================================================
+
 app.on('ready', () => {
-  tray = new Tray('./switch.png')
+  // INIT TRAY
+  tray = new Tray(smallicon);
   const contextMenu = Menu.buildFromTemplate([
     {label: 'Open App', type: 'normal', click: function(){
       mainWindow.show();
     }},
     {label: 'Quit', type: 'normal', click: function(){
       app.isQuitting = true;
+      if (subWindow) subWindow.destroy();
       tray.destroy();
       app.quit();
     }}
@@ -56,12 +92,35 @@ app.on('ready', () => {
   tray.on('click', () => {
     mainWindow.show();
   });
-  createWindow();
+
+  // MAKE APP MENU
+  const appMenu = Menu.buildFromTemplate([
+    {label: 'Settings', type: 'normal', click: function(){
+      if (!subWindow){
+        createSubWindow();
+      } else {
+        subWindow.show();
+      }
+    }},
+    {label: 'Quit', type: 'normal', click: function(){
+      app.isQuitting = true;
+      if (subWindow) subWindow.destroy();
+      tray.destroy();
+      app.quit();
+    }},
+    {label: 'Inspect', click: function(){
+      subWindow.toggleDevTools()
+    }}
+  ]);
+  Menu.setApplicationMenu(appMenu);
+
+  // MAKE MAIN WINDOW
+  createMainWindow();
 });
 
 app.on('activate', () => {
   if (mainWindow === null)
-    createWindow();
+    createMainWindow();
 });
 
 // only needed for discord allowing spectate, join, ask to join

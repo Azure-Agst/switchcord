@@ -1,0 +1,60 @@
+{
+  "gamelist": [
+    "Splatoon 2",
+    "Mariokart 8 Deluxe",
+    "Breath of the Wild",
+    "Super Mario Odyssey",
+    "Fortnite",
+    "Stardew Valley"
+  ],
+  "games": {
+    "Splatoon 2": {
+      "appiconid": "splatoon",
+      "states": [
+        {"code":"null","state":"Don't Display State"},
+        {"code":"quickplay","state":"Turf War"},
+        {"code":"ranked","state":"Ranked Battles"},
+        {"code":"league","state":"League Battles"},
+        {"code":"salmon","state":"Salmon Run"},
+        {"code":"solo","state":"Solo Campaign"}
+      ]
+    },
+    "Mariokart 8 Deluxe": {
+      "appiconid": "mk8d",
+      "states": [
+        {"code":"null","state":"Don't Display State"},
+        {"code":"onlsolo","state":"Online [Solo]"},
+        {"code":"onlduo","state":"Online [Duo]"},
+        {"code":"onltourn","state":"Online [Tournament]"}
+      ]
+    },
+    "Breath of the Wild": {
+      "appiconid": "botw",
+      "states": [
+        {"code":"null","state":"Don't Display State"}
+      ]
+    },
+    "Super Mario Odyssey": {
+      "appiconid": "smodyssey",
+      "states": [
+        {"code":"null","state":"Don't Display State"}
+      ]
+    },
+    "Fortnite": {
+      "appiconid": "fortnite",
+      "states": [
+        {"code":"null","state":"Don't Display State"},
+        {"code":"onlsolo","state":"In Solos"},
+        {"code":"onlduo","state":"In Duos"},
+        {"code":"onlsquads","state":"In Squads"},
+        {"code":"onlltm","state":"In LTM"}
+      ]
+    },
+    "Stardew Valley": {
+      "appiconid": "stardew",
+      "states": [
+        {"code":"null","state":"Don't Display State"},
+      ]
+    },
+  }
+}
