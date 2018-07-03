@@ -53,7 +53,7 @@
     "Stardew Valley": {
       "appiconid": "stardew",
       "states": [
-        {"code":"null","state":"Don't Display State"},
+        {"code":"null","state":"Don't Display State"}
       ]
     },
   }
