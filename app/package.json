@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "discord-rpc": "3.0.0-beta.10",
-    "electron": "^2.0.3"
+    "electron": "^2.0.4"
   },
   "devDependencies": {},
   "author": "",

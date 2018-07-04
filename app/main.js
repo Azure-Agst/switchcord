@@ -1,8 +1,10 @@
 /* eslint-disable no-console */
 
-const { app, BrowserWindow, Menu, Tray } = require('electron');
+const { app, BrowserWindow, Menu, Tray, ipcMain } = require('electron');
 const path = require('path');
 const url = require('url');
+const fs = require('fs');
+const request = require('request');
 const DiscordRPC = require('discord-rpc');
 
 const smallicon = path.join(__dirname, 'resources/switch.png');
@@ -21,7 +23,7 @@ function createMainWindow() {
   mainWindow = new BrowserWindow({
     width: 340,
     height: 380,
-    resizable: false,
+    resizable: true,
     titleBarStyle: 'hidden',
     icon: smallicon
   });
@@ -50,8 +52,8 @@ function createMainWindow() {
 function createSubWindow() {
   subWindow = new BrowserWindow({
     width: 680,
-    height: 400,
-    resizable: false,
+    height: 550,
+    resizable: true,
     titleBarStyle: 'hidden',
     icon: smallicon
   });
@@ -74,6 +76,14 @@ function createSubWindow() {
 // ============================================================================
 
 app.on('ready', () => {
+
+  //check for json
+  if (!fs.existsSync(path.join(__dirname, 'games.json'))){
+    console.log("games.json does not exist!")
+    request.get('http://azureagst.pw/switchrpc/examplegames.json').pipe(fs.createWriteStream('games.json'));
+    while(!fs.existsSync(path.join(__dirname, 'games.json'))){};
+  }
+
   // INIT TRAY
   tray = new Tray(smallicon);
   const contextMenu = Menu.buildFromTemplate([
@@ -109,7 +119,7 @@ app.on('ready', () => {
       app.quit();
     }},
     {label: 'Inspect', click: function(){
-      subWindow.toggleDevTools()
+      mainWindow.toggleDevTools()
     }}
   ]);
   Menu.setApplicationMenu(appMenu);
@@ -122,6 +132,39 @@ app.on('activate', () => {
   if (mainWindow === null)
     createMainWindow();
 });
+
+// ============================================================================
+// IPC COMMANDS
+
+ipcMain.on('updatejson', function(event, arg){
+  //console.log(arg.master.games['botw'].fullname);
+
+  //arg.usergames.length = number of selected games
+  //arg.usergames = shortcode
+  //arg.master.games = game object
+  //arg.master.games.[game].fullname = game name
+
+  var newjson = {};
+  var statearray = [];
+  var states;
+
+  for (i=0;i<arg.usergames.length;i++){
+    statearray = [];
+    states = arg.master.games[arg.usergames[i]];
+
+    for (j=0;j<states.length;j++){
+      statearray.push(states[i])
+    }
+
+    newjson[arg.usergames[i]] = statearray;
+  }
+
+  console.log(newjson)
+
+  //event.sender.send('asynchronous-reply', 'pong')
+})
+
+// ============================================================================
 
 // only needed for discord allowing spectate, join, ask to join
 DiscordRPC.register(ClientId);

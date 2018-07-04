@@ -1,5 +1,8 @@
 const { webFrame } = require('electron');
-const arrays = require('./states.json')
+const path = require('path');
+const fs = require('fs');
+
+//console.log(__dirname);
 
 window.game = "home";
 window.gamename = "Home Menu";
@@ -7,8 +10,15 @@ window.gamestate = "null";
 var array, posi_states = null;
 const gamestate = document.getElementById('gamestate');
 
+
+var games = JSON.parse(fs.readFileSync("./games.json"));
+console.log(games);
+
+
 function updateGame() {
   console.log(document.getElementById('gameselect').value);
+
+  /*
   switch (document.getElementById('gameselect').value){
     case "spla2n":
       window.game = "splatoon";
@@ -41,6 +51,7 @@ function updateGame() {
       gamearray = arrays.home;
       updateDrop();
   }
+  */
 };
 
 function updateDrop() {

@@ -13,11 +13,9 @@ body, html {
   -webkit-app-region: drag;
 }
 
-h1 {
+button {
   text-align: center;
   margin: auto;
-  padding-top: 1em;
-  color: white;
 }
 
 h3 {
@@ -25,6 +23,13 @@ h3 {
   margin: auto;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  color: white;
+}
+
+p.main {
+  text-align: center;
+  margin: auto;
+  padding-top: 1em;
   color: white;
 }
 
@@ -37,9 +42,10 @@ p.end {
   text-align: center;
 }
 
-#gameselect, #gamestate, #button {
-  margin: 5px;
-  margin-left: 20%;
-  text-align:center;
-  width: 60%;
+.menu {
+  width: 400px; /* Set a width if you like */
+  height: 300px;
+  margin: auto;
+  overflow-y: auto;
+  background-color: white;
 }
