@@ -38,7 +38,11 @@ p.end {
   color: white;
   bottom : 0;
   height : 40px;
-  margin-top : 40px;
+  margin-top : 20px;
+  text-align: center;
+}
+
+.buttons {
   text-align: center;
 }
 
@@ -48,4 +52,8 @@ p.end {
   margin: auto;
   overflow-y: auto;
   background-color: white;
+}
+
+#update {
+  height: 40px;
 }

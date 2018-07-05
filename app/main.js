@@ -21,7 +21,7 @@ stash.gamename = stash.gamestate = "";
 const ClientId = '439883639539499019';
 
 // change next line if you want development config
-let dev = false;
+let dev = true;
 
 let mainWindow, subWindow;
 let tray = null;

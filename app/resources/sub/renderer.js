@@ -22,11 +22,16 @@ request.get('http://azureagst.pw/switchrpc/master.json', function(err, response,
   options = "<form id='gamepicker'>"
   for (i=0; i<master.gamelist.length; i++){
       tempgame = master.games[master.gamelist[i]];
-      options += '<input type="checkbox" name='+master.gamelist[i]+'>'+tempgame.fullname+"</input><br>";
+      options += '<input type="checkbox" id='+master.gamelist[i]+'>'+tempgame.fullname+"</input><br>";
   }
   options += "</form>"
-
   document.getElementById("menu").innerHTML = options;
+
+  //enable games already in games.json
+  var currentgames = Object.keys(JSON.parse(fs.readFileSync("./games.json")));
+  for (i=0;i<currentgames.length;i++){
+    document.getElementById(currentgames[i]).checked = true;
+  }
 
   state = 0;
 });
@@ -43,7 +48,7 @@ document.getElementById("submit-btn").addEventListener("click", function (e) {
   var x = document.getElementById("gamepicker");
   for (i = 0; i < x.length ;i++) {
     if (x.elements[i].checked){
-      usergames.push(x.elements[i].name);
+      usergames.push(x.elements[i].id);
     }
   }
 
@@ -57,5 +62,5 @@ document.getElementById("close-btn").addEventListener("click", function (e) {
 });
 
 ipcRenderer.on('jsonupdated', function(event, arg){
-  document.getElementById('update').innerHTML = "Done!"
+  document.getElementById('update').innerHTML = "Updated!"
 });
