@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 
+//modules
 const { app, BrowserWindow, Menu, Tray, ipcMain } = require('electron');
 const path = require('path');
 const url = require('url');
@@ -7,6 +8,7 @@ const fs = require('fs');
 const request = require('request');
 const DiscordRPC = require('discord-rpc');
 
+// fancy consts and shit
 const smallicon = path.join(__dirname, 'resources/switch.png');
 const rpc = new DiscordRPC.Client({ transport: 'ipc' });
 var startTimestamp = new Date();
@@ -25,10 +27,43 @@ let mainWindow, subWindow;
 let tray = null;
 
 // ============================================================================
+// init some objects
+
+var menuTemplate = [
+  {label: 'Settings', type: 'normal', click: function(){
+    if (!subWindow){
+      createSubWindow();
+    } else {
+      subWindow.show();
+    }
+  }},
+  {label: 'Quit', type: 'normal', click: function(){
+    app.isQuitting = true;
+    if (subWindow) subWindow.destroy();
+    tray.destroy();
+    app.quit();
+  }}
+];
+
+var trayTemplate = [
+  {label: 'Open App', type: 'normal', click: function(){
+    mainWindow.show();
+  }},
+  {label: 'Quit', type: 'normal', click: function(){
+    app.isQuitting = true;
+    if (subWindow) subWindow.destroy();
+    tray.destroy();
+    app.quit();
+  }}
+];
+
+
+// ============================================================================
 // handle dev vars first
 
 if (dev) {
   var exampleurl = 'http://azureagst.pw/switchrpc/devgames.json'
+  menuTemplate.push({label: 'Inspect', click: function(){mainWindow.toggleDevTools()}});
 } else {
   var exampleurl = 'http://azureagst.pw/switchrpc/examplegames.json'
 }
@@ -37,15 +72,20 @@ if (dev) {
 // main window function
 
 function createMainWindow() {
-  mainWindow = new BrowserWindow({
+
+  var mainwindowopt = {
     width: 340,
     height: 380,
-    resizable: true,
+    resizable: false,
     titleBarStyle: 'hidden',
     icon: smallicon
-  });
+  }
 
-  //mainWindow.setMenu(null);
+  if (dev) {
+    mainwindowopt.resizable = true;
+  }
+
+  mainWindow = new BrowserWindow(mainwindowopt);
 
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'resources/main/index.html'),
@@ -67,13 +107,21 @@ function createMainWindow() {
 // sub window function
 
 function createSubWindow() {
-  subWindow = new BrowserWindow({
+
+  var subwindowopt = {
     width: 680,
     height: 550,
-    resizable: true,
+    resizable: false,
     titleBarStyle: 'hidden',
-    icon: smallicon
-  });
+    icon: smallicon,
+    parent: mainWindow
+  }
+
+  if (dev) {
+    subwindowopt.resizable = true;
+  }
+
+  subWindow = new BrowserWindow(subwindowopt);
 
   subWindow.setMenu(null);
 
@@ -104,17 +152,7 @@ app.on('ready', () => {
 
   // INIT TRAY
   tray = new Tray(smallicon);
-  const contextMenu = Menu.buildFromTemplate([
-    {label: 'Open App', type: 'normal', click: function(){
-      mainWindow.show();
-    }},
-    {label: 'Quit', type: 'normal', click: function(){
-      app.isQuitting = true;
-      if (subWindow) subWindow.destroy();
-      tray.destroy();
-      app.quit();
-    }}
-  ])
+  const contextMenu = Menu.buildFromTemplate(trayTemplate);
   tray.setToolTip('SwitchRPC');
   tray.setContextMenu(contextMenu);
   tray.on('click', () => {
@@ -122,25 +160,12 @@ app.on('ready', () => {
   });
 
   // MAKE APP MENU
-  const appMenu = Menu.buildFromTemplate([
-    {label: 'Settings', type: 'normal', click: function(){
-      if (!subWindow){
-        createSubWindow();
-      } else {
-        subWindow.show();
-      }
-    }},
-    {label: 'Quit', type: 'normal', click: function(){
-      app.isQuitting = true;
-      if (subWindow) subWindow.destroy();
-      tray.destroy();
-      app.quit();
-    }},
-    {label: 'Inspect', click: function(){
-      mainWindow.toggleDevTools()
-    }}
-  ]);
-  Menu.setApplicationMenu(appMenu);
+  const menu = Menu.buildFromTemplate(menuTemplate);
+  Menu.setApplicationMenu(menu);
+
+  //export vars for external references
+  exports.tray = tray;
+  exports.app = app;
 
   // MAKE MAIN WINDOW
   createMainWindow();
