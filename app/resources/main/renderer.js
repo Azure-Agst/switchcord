@@ -1,4 +1,4 @@
-const { webFrame } = require('electron');
+const { webFrame, ipcRenderer } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
@@ -22,6 +22,12 @@ gameselect.innerHTML = selopt
 steopt = "<option value='null'>Just Looking Around</option>"
 gamestate.innerHTML = steopt //yeah yeah, could be one line but idc
 
+//initially set ipc
+ipc.appiconid = "home";
+ipc.gamename = "Home Menu";
+ipc.gamestate = "Just Looking Around";
+ipcRenderer.send('updaterpc', ipc);
+
 // ============================================================================
 
 function updateGame() {
@@ -37,16 +43,16 @@ function updateGame() {
     gamestate.innerHTML = "<option value='null'>Just Looking Around</option>"
     ipc.appiconid = gameselect.value;
     ipc.gamename = "Home Menu";
-    ipc.gamestate = "Just Looking Around"
-    //TODO: ipc call
+    ipc.gamestate = "Just Looking Around";
+    ipcRenderer.send('updaterpc', ipc);
 
   //if game is not in json
   } else if (gamearr.indexOf(gameselect.value) == -1) {
     gamestate.innerHTML = "<option value='null'>Hacking SwitchRPC</option>"
     ipc.appiconid = "home";
     ipc.gamename = "This guy's a hacker";
-    ipc.gamestate = "Hacking SwitchRPC :("
-    //TODO: ipc call
+    ipc.gamestate = "Hacking SwitchRPC :(";
+    ipcRenderer.send('updaterpc', ipc);
 
   //not home, game is in json
   } else {
@@ -61,7 +67,7 @@ function updateGame() {
     ipc.gamename = games[gameselect.value].fullname;
     ipc.gamestate = newstates[0]; //default to first state
     console.log("game = "+ipc.gamename);
-    //TODO: ipc call
+    ipcRenderer.send('updaterpc', ipc);
   }
 };
 
@@ -76,5 +82,5 @@ function updateState() {
 
   ipc.gamestate = gamestate.options[gamestate.selectedIndex].text;
   console.log("gamestate = "+ipc.gamestate);
-  //TODO: ipc call
+  ipcRenderer.send('updaterpc', ipc);
 }

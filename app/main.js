@@ -8,12 +8,17 @@ const request = require('request');
 const DiscordRPC = require('discord-rpc');
 
 const smallicon = path.join(__dirname, 'resources/switch.png');
+const rpc = new DiscordRPC.Client({ transport: 'ipc' });
+var startTimestamp = new Date();
+
+//init empty stash obj for ipc
+var stash = new Object();
+stash.gamename = stash.gamestate = "";
 
 // don't change the client id if you want this example to work
 const ClientId = '439883639539499019';
 
 let mainWindow, subWindow;
-
 let tray = null;
 
 // ============================================================================
@@ -81,7 +86,7 @@ app.on('ready', () => {
   if (!fs.existsSync(path.join(__dirname, 'games.json'))){
     console.log("games.json does not exist!")
     request.get('http://azureagst.pw/switchrpc/examplegames.json').pipe(fs.createWriteStream('games.json'));
-    while(!fs.existsSync('./games.json')){};
+    while(!fs.existsSync('./games.json')){}
   }
 
   // INIT TRAY
@@ -137,6 +142,8 @@ app.on('activate', () => {
 // IPC COMMANDS
 
 ipcMain.on('updatejson', function(event, arg){
+  //TODO: Finish this? :thonk:
+
   //console.log(arg.master.games['botw'].fullname);
 
   //arg.usergames.length = number of selected games
@@ -162,68 +169,101 @@ ipcMain.on('updatejson', function(event, arg){
   console.log(newjson)
 
   //event.sender.send('asynchronous-reply', 'pong')
-})
+});
 
-// ============================================================================
 
-// only needed for discord allowing spectate, join, ask to join
-DiscordRPC.register(ClientId);
+ipcMain.on('updaterpc', function(event, arg){
+  /*
+  Here's how this rolls:
+  1. Check previous game if exists
+  2. Update RPC
+  3. Stash current values
+  */
 
-const rpc = new DiscordRPC.Client({ transport: 'ipc' });
-const startTimestamp = new Date();
+  console.log(arg)
 
-async function setActivity() {
-  if (!rpc || !mainWindow)
-    return;
+  if (arg.gamename != stash.gamename){ //detected game change...
+    startTimestamp = new Date(); //reset timestamp
+  }
 
-  var gameid = await mainWindow.webContents.executeJavaScript('window.game');
-  var gamename = await mainWindow.webContents.executeJavaScript('window.gamename');
-  var gamestate = await mainWindow.webContents.executeJavaScript('window.gamestate');
-
-  if (gameid == "home") {
+  if (arg.gamestate == "Don't Display State"){
     rpc.setActivity({
-      details: `At Home Menu`,
+      details: 'Playing '+arg.gamename,
       startTimestamp,
-      largeImageKey: `${gameid}`,
-      largeImageText: `${gamename}`,
+      largeImageKey: arg.appiconid,
+      largeImageText: arg.gamename,
       smallImageKey: 'switchlogo',
-      smallImageText: 'Nintendo Switch',
-      instance: false,
-    });
-  } else if (gamestate == "Don't Display State" ||
-             gamestate == "Solo Play" ||
-             gamestate == "null" ||
-             gamestate == null) {
-    rpc.setActivity({
-      details: `Playing ${gamename}`,
-      startTimestamp,
-      largeImageKey: `${gameid}`,
-      largeImageText: `${gamename}`,
-      smallImageKey: 'switchlogo',
-      smallImageText: 'Nintendo Switch',
+      smallImageText: 'SwitchRPC',
       instance: false,
     });
   } else {
     rpc.setActivity({
-      details: `Playing ${gamename}`,
-      state: gamestate,
+      details: `Playing `+arg.gamename,
+      state: arg.gamestate,
       startTimestamp,
-      largeImageKey: `${gameid}`,
-      largeImageText: `${gamename}`,
+      largeImageKey: arg.appiconid,
+      largeImageText: arg.gamename,
       smallImageKey: 'switchlogo',
       smallImageText: 'Nintendo Switch',
       instance: false,
     });
   }
-}
 
-rpc.on('ready', () => {
-  setActivity();
-
-  // activity can only be set every 15 seconds
-  setInterval(() => {
-    setActivity();
-  }, 15e3);
+  //stashing...
+  stash.gamename = arg.gamename;
+  stash.gamestate = arg.gamename;
 });
+
+// ============================================================================
+
+// async function setActivity() {
+//   if (!rpc || !mainWindow)
+//     return;
+//
+//   if (gameid == "home") {
+//     rpc.setActivity({
+//       details: `At Home Menu`,
+//       startTimestamp,
+//       largeImageKey: `${gameid}`,
+//       largeImageText: `${gamename}`,
+//       smallImageKey: 'switchlogo',
+//       smallImageText: 'Nintendo Switch',
+//       instance: false,
+//     });
+//   } else if (gamestate == "Don't Display State" ||
+//              gamestate == "Solo Play" ||
+//              gamestate == "null" ||
+//              gamestate == null) {
+//     rpc.setActivity({
+//       details: `Playing ${gamename}`,
+//       startTimestamp,
+//       largeImageKey: `${gameid}`,
+//       largeImageText: `${gamename}`,
+//       smallImageKey: 'switchlogo',
+//       smallImageText: 'Nintendo Switch',
+//       instance: false,
+//     });
+//   } else {
+//     rpc.setActivity({
+//       details: `Playing ${gamename}`,
+//       state: gamestate,
+//       startTimestamp,
+//       largeImageKey: `${gameid}`,
+//       largeImageText: `${gamename}`,
+//       smallImageKey: 'switchlogo',
+//       smallImageText: 'Nintendo Switch',
+//       instance: false,
+//     });
+//   }
+// }
+//
+// rpc.on('ready', () => {
+//   setActivity();
+//
+//   // activity can only be set every 15 seconds
+//   setInterval(() => {
+//     setActivity();
+//   }, 15e3);
+// });
 
 rpc.login(ClientId).catch(console.error);
