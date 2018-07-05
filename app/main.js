@@ -81,7 +81,7 @@ app.on('ready', () => {
   if (!fs.existsSync(path.join(__dirname, 'games.json'))){
     console.log("games.json does not exist!")
     request.get('http://azureagst.pw/switchrpc/examplegames.json').pipe(fs.createWriteStream('games.json'));
-    while(!fs.existsSync(path.join(__dirname, 'games.json'))){};
+    while(!fs.existsSync('./games.json')){};
   }
 
   // INIT TRAY

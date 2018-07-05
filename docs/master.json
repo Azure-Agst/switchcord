@@ -12,54 +12,54 @@
       "fullname": "Splatoon 2",
       "appiconid": "splatoon",
       "states": [
-        {"code":"null","state":"Don't Display State"},
-        {"code":"quickplay","state":"Turf War"},
-        {"code":"ranked","state":"Ranked Battles"},
-        {"code":"league","state":"League Battles"},
-        {"code":"salmon","state":"Salmon Run"},
-        {"code":"solo","state":"Solo Campaign"}
+        "Don't Display State",
+        "Turf War",
+        "Ranked Battles",
+        "League Battles",
+        "Salmon Run",
+        "Solo Campaign"
       ]
     },
     "mk8d": {
       "fullname": "Mariokart 8 Deluxe",
       "appiconid": "mk8d",
       "states": [
-        {"code":"null","state":"Don't Display State"},
-        {"code":"onlsolo","state":"Online [Solo]"},
-        {"code":"onlduo","state":"Online [Duo]"},
-        {"code":"onltourn","state":"Online [Tourfullnament]"}
+        "Don't Display State",
+        "Online [Solo]",
+        "Online [Duo]",
+        "Online [Tournament]"
       ]
     },
     "botw": {
       "fullname": "Breath of the Wild",
       "appiconid": "botw",
       "states": [
-        {"code":"null","state":"Don't Display State"}
+        "Don't Display State"
       ]
     },
     "smodyssey": {
       "fullname": "Super Mario Odyssey",
       "appiconid": "smodyssey",
       "states": [
-        {"code":"null","state":"Don't Display State"}
+        "Don't Display State"
       ]
     },
     "fortnite": {
       "fullname": "Fortnite",
       "appiconid": "fortnite",
       "states": [
-        {"code":"null","state":"Don't Display State"},
-        {"code":"onlsolo","state":"In Solos"},
-        {"code":"onlduo","state":"In Duos"},
-        {"code":"onlsquads","state":"In Squads"},
-        {"code":"onlltm","state":"In LTM"}
+        "Don't Display State",
+        "In Solos",
+        "In Duos",
+        "In Squads",
+        "In LTM"
       ]
     },
     "stardew": {
       "fullname": "Stardew Valley",
       "appiconid": "stardew",
       "states": [
-        {"code":"null","state":"Don't Display State"}
+        "Don't Display State"
       ]
     }
   }
