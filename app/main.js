@@ -18,11 +18,23 @@ stash.gamename = stash.gamestate = "";
 // don't change the client id if you want this example to work
 const ClientId = '439883639539499019';
 
+// change next line if you want development config
+let dev = false;
+
 let mainWindow, subWindow;
 let tray = null;
 
 // ============================================================================
-// main window !!!!!
+// handle dev vars first
+
+if (dev) {
+  var exampleurl = 'http://azureagst.pw/switchrpc/devgames.json'
+} else {
+  var exampleurl = 'http://azureagst.pw/switchrpc/examplegames.json'
+}
+
+// ============================================================================
+// main window function
 
 function createMainWindow() {
   mainWindow = new BrowserWindow({
@@ -52,7 +64,7 @@ function createMainWindow() {
 }
 
 // ============================================================================
-// game chooser window!
+// sub window function
 
 function createSubWindow() {
   subWindow = new BrowserWindow({
@@ -79,13 +91,14 @@ function createSubWindow() {
 }
 
 // ============================================================================
+// app initialization function
 
 app.on('ready', () => {
 
   //check for json
   if (!fs.existsSync(path.join(__dirname, 'games.json'))){
     console.log("games.json does not exist!")
-    request.get('http://azureagst.pw/switchrpc/examplegames.json').pipe(fs.createWriteStream('games.json'));
+    request.get(exampleurl).pipe(fs.createWriteStream('games.json'));
     while(!fs.existsSync('./games.json')){}
   }
 
@@ -133,6 +146,7 @@ app.on('ready', () => {
   createMainWindow();
 });
 
+// if the app gets reactivated...
 app.on('activate', () => {
   if (mainWindow === null)
     createMainWindow();
@@ -215,55 +229,5 @@ ipcMain.on('updaterpc', function(event, arg){
 });
 
 // ============================================================================
-
-// async function setActivity() {
-//   if (!rpc || !mainWindow)
-//     return;
-//
-//   if (gameid == "home") {
-//     rpc.setActivity({
-//       details: `At Home Menu`,
-//       startTimestamp,
-//       largeImageKey: `${gameid}`,
-//       largeImageText: `${gamename}`,
-//       smallImageKey: 'switchlogo',
-//       smallImageText: 'Nintendo Switch',
-//       instance: false,
-//     });
-//   } else if (gamestate == "Don't Display State" ||
-//              gamestate == "Solo Play" ||
-//              gamestate == "null" ||
-//              gamestate == null) {
-//     rpc.setActivity({
-//       details: `Playing ${gamename}`,
-//       startTimestamp,
-//       largeImageKey: `${gameid}`,
-//       largeImageText: `${gamename}`,
-//       smallImageKey: 'switchlogo',
-//       smallImageText: 'Nintendo Switch',
-//       instance: false,
-//     });
-//   } else {
-//     rpc.setActivity({
-//       details: `Playing ${gamename}`,
-//       state: gamestate,
-//       startTimestamp,
-//       largeImageKey: `${gameid}`,
-//       largeImageText: `${gamename}`,
-//       smallImageKey: 'switchlogo',
-//       smallImageText: 'Nintendo Switch',
-//       instance: false,
-//     });
-//   }
-// }
-//
-// rpc.on('ready', () => {
-//   setActivity();
-//
-//   // activity can only be set every 15 seconds
-//   setInterval(() => {
-//     setActivity();
-//   }, 15e3);
-// });
 
 rpc.login(ClientId).catch(console.error);
