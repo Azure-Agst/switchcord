@@ -11,14 +11,18 @@ If you like the app and have an idea, do consider forking and making a pull requ
 
 Download the most recent releases [here](https://github.com/Azure-Agst/switchrpc/releases)!
 
+### Add a Game
+
+As of now, I'm aware that I don't have the most expansive database of switch games, however I'm always up to adding more! Open an issue and fill out the template, and I'll add your game as soon as possible!
+
 ### Packaging
 
 If for some godforesaken reason you want to package the app for yourself, you'll need to do a few things:
 
 1. Clone the repo or download the source code.
-2. Download the x64 electron app wrappers from [electron/electron](https://github.com/electron/electron/releases). Make sure they're the production packages called `electron-vX.X.X-linux-x64.zip`, `electron-vX.X.X-mas-x64.zip`, and `electron-vX.X.X-win32-x64.zip`
-3. Make a folder in the root of the repo called "wrappers" and place the zip files you download in there.
-4. Open up a bash shell (i.e. Terminal/Git Bash) and execute these commands:
+2. Make sure you have ASAR and electron-packager installed globally.
+3. Use `npm install --dev` in the app directory to install.
+4. Open up a bash shell (i.e. Terminal/Git Bash) and execute these commands in the root directory:
 
 ```
 $ chmod +x ./packager.sh
@@ -27,7 +31,7 @@ $ /packager.sh --make
 
 ### Build
 
-To build, clone the repo, cd into ./app and run `npm install`. This will install electron and all dependencies for a development environment. You can start the app by running `npm start` while inside the app directory.
+To build, clone the repo, cd into ./app and run `npm install --dev`. This will install electron and all dependencies for a development environment. You can start the app by running `npm start` while inside the app directory.
 
 =====
 
