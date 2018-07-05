@@ -63,7 +63,7 @@ var trayTemplate = [
 
 if (dev) {
   var exampleurl = 'http://azureagst.pw/switchrpc/devgames.json'
-  menuTemplate.push({label: 'Inspect', click: function(){mainWindow.toggleDevTools()}});
+  menuTemplate.push({label: 'Inspect', click: function(){subWindow.toggleDevTools()}});
 } else {
   var exampleurl = 'http://azureagst.pw/switchrpc/examplegames.json'
 }
@@ -78,6 +78,7 @@ function createMainWindow() {
     height: 380,
     resizable: false,
     titleBarStyle: 'hidden',
+    backgroundColor: '#e60012',
     icon: smallicon
   }
 
@@ -113,6 +114,7 @@ function createSubWindow() {
     height: 550,
     resizable: false,
     titleBarStyle: 'hidden',
+    backgroundColor: '#e60012',
     icon: smallicon,
     parent: mainWindow
   }
@@ -163,10 +165,6 @@ app.on('ready', () => {
   const menu = Menu.buildFromTemplate(menuTemplate);
   Menu.setApplicationMenu(menu);
 
-  //export vars for external references
-  exports.tray = tray;
-  exports.app = app;
-
   // MAKE MAIN WINDOW
   createMainWindow();
 });
@@ -181,33 +179,25 @@ app.on('activate', () => {
 // IPC COMMANDS
 
 ipcMain.on('updatejson', function(event, arg){
-  //TODO: Finish this? :thonk:
-
-  //console.log(arg.master.games['botw'].fullname);
-
-  //arg.usergames.length = number of selected games
-  //arg.usergames = shortcode
-  //arg.master.games = game object
-  //arg.master.games.[game].fullname = game name
+  /*
+  Here's how this rolls:
+  1. init vars
+  2. add properties from master identified by array usergames to a new objects
+  3. overwrite old json if exists
+  4. send response
+  */
+  //call = "ipcRenderer.send('updatejson', {usergames, master})"
 
   var newjson = {};
-  var statearray = [];
-  var states;
-
   for (i=0;i<arg.usergames.length;i++){
-    statearray = [];
-    states = arg.master.games[arg.usergames[i]];
-
-    for (j=0;j<states.length;j++){
-      statearray.push(states[i])
-    }
-
-    newjson[arg.usergames[i]] = statearray;
+    newjson[arg.usergames[i]] = arg.master.games[arg.usergames[i]];
   }
 
-  console.log(newjson)
+  console.log(newjson);
 
-  //event.sender.send('asynchronous-reply', 'pong')
+  fs.writeFileSync('./games.json', JSON.stringify(newjson));
+
+  event.sender.send('jsonupdated', true);
 });
 
 

@@ -13,7 +13,7 @@ body, html {
   -webkit-app-region: drag;
 }
 
-button {
+.btn {
   text-align: center;
   margin: auto;
 }

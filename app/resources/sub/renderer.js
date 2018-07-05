@@ -2,6 +2,7 @@ const { webFrame, remote, ipcRenderer } = require('electron');
 const request = require("request");
 const fs = require('fs');
 var options, state, master;
+var newgames = new Object();
 
 state = 1; //loading
 
@@ -36,6 +37,8 @@ document.getElementById("submit-btn").addEventListener("click", function (e) {
     return;
   }
 
+  document.getElementById('update').innerHTML = "Updating..."
+
   var usergames = []
   var x = document.getElementById("gamepicker");
   for (i = 0; i < x.length ;i++) {
@@ -44,10 +47,15 @@ document.getElementById("submit-btn").addEventListener("click", function (e) {
     }
   }
 
-  ipcRenderer.send('updatejson', {usergames, master})
+  newgames.usergames = usergames; newgames.master = master;
+  ipcRenderer.send('updatejson', newgames);
 });
 
 document.getElementById("close-btn").addEventListener("click", function (e) {
      var window = remote.getCurrentWindow();
      window.close();
+});
+
+ipcRenderer.on('jsonupdated', function(event, arg){
+  document.getElementById('update').innerHTML = "Done!"
 });
