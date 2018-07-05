@@ -2,3 +2,4 @@ node_modules/
 app.asar
 packages/
 games.json
+dist/

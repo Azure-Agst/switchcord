@@ -4,14 +4,23 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "release": "build"
   },
   "dependencies": {
     "discord-rpc": "3.0.0-beta.10",
     "request": "^2.87.0"
   },
   "devDependencies": {
-    "electron": "^2.0.4"
+    "electron": "^2.0.4",
+    "electron-builder": "^20.19.2"
+  },
+  "build": {
+    "appId": "pw.azureagst.switchrpc",
+    "directories": {
+      "output": "../dist"
+    },
+    "icon": "./icon.png"
   },
   "author": "",
   "license": "ISC"

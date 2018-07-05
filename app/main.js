@@ -146,7 +146,7 @@ function createSubWindow() {
 app.on('ready', () => {
 
   //check for json
-  if (!fs.existsSync(path.join(__dirname, 'games.json'))){
+  if (!fs.existsSync('games.json')){
     console.log("games.json does not exist!")
     request.get(exampleurl).pipe(fs.createWriteStream('games.json'));
     while(!fs.existsSync('./games.json')){}
