@@ -1,12 +1,17 @@
-const { webFrame, remote, ipcRenderer } = require('electron');
+const { webFrame, remote, ipcRenderer, shell } = require('electron');
 const request = require("request");
+const path = require('path');
 const fs = require('fs');
+
+const package = require(path.join(__dirname, '../../package.json'));
+
 var options, state, master;
 var newgames = new Object();
 
 state = 1; //loading
 
 document.getElementById("menu").innerHTML = '<p class="text-align: center;">loading...</p>'
+document.getElementById("version").innerHTML = "v"+package.version;
 
 //run once on settings load
 request.get('http://azureagst.pw/switchrpc/master.json', function(err, response, body){
@@ -60,6 +65,10 @@ document.getElementById("close-btn").addEventListener("click", function (e) {
      var window = remote.getCurrentWindow();
      window.close();
 });
+
+function suggest(){
+  shell.openExternal('https://github.com/Azure-Agst/switchrpc/issues/new?template=suggestion.md');
+};
 
 ipcRenderer.on('jsonupdated', function(event, arg){
   document.getElementById('update').innerHTML = "Updated!"

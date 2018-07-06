@@ -111,7 +111,7 @@ function createMainWindow() {
 function createSubWindow() {
 
   var subwindowopt = {
-    width: 680,
+    width: 500,
     height: 550,
     resizable: false,
     titleBarStyle: 'hidden',
@@ -120,13 +120,14 @@ function createSubWindow() {
     parent: mainWindow
   }
 
-  if (dev) {
-    subwindowopt.resizable = true;
-  }
-
   subWindow = new BrowserWindow(subwindowopt);
 
-  subWindow.setMenu(null);
+  if (dev) {
+    subwindowopt.resizable = true;
+  } else {
+    subWindow.setMenu(null);
+  }
+
 
   subWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'resources/sub/index.html'),

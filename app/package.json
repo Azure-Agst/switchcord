@@ -1,6 +1,6 @@
 {
   "name": "switchrpc",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -19,9 +19,9 @@
   "build": {
     "appId": "pw.azureagst.switchrpc",
     "directories": {
-      "output": "../dist"
-    },
-    "icon": "./icon.png"
+      "output": "../dist",
+      "buildResources": "../build"
+    }
   },
   "author": "Andrew Augustine",
   "license": "ISC"

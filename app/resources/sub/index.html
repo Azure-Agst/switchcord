@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <title>Switch RPC</title>
-    <link rel=stylesheet href=../../font.css />
+    <link rel=stylesheet href=../font.css />
     <link rel=stylesheet href=style.css />
   </head>
   <body>
+    <div class="topleft">
+      <p class="corner" id="version"></p>
+    </div>
+    <div class="topright">
+      <p class="corner" id="update"></p>
+    </div>
     <h3>Settings!</h3>
     <p class="main">Game List:</p>
     <div class="menu" id="menu"></div>
-    <p class="main" id="update"></p>
+    <p>Is your game missing? <a class="u" onclick="suggest();">Add it!</a></p>
     <div class="buttons">
       <button id="close-btn" class="btn">Close</button>
       <button id="submit-btn" class="btn">Update</button>

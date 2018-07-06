@@ -26,20 +26,21 @@ h3 {
   color: white;
 }
 
-p.main {
+p {
+  /*font-family: markwebpro-thin;*/
+  color: white;
   text-align: center;
+}
+
+p.main {
   margin: auto;
   padding-top: 1em;
-  color: white;
 }
 
 p.end {
-  font-family: markwebpro-thin;
-  color: white;
   bottom : 0;
   height : 40px;
   margin-top : 20px;
-  text-align: center;
 }
 
 .buttons {
@@ -47,13 +48,30 @@ p.end {
 }
 
 .menu {
-  width: 400px; /* Set a width if you like */
+  width: 400px;
   height: 300px;
   margin: auto;
   overflow-y: auto;
   background-color: white;
 }
 
-#update {
-  height: 40px;
+.corner {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.topright{
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.topleft{
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+a.u {
+  text-decoration: underline;
 }
