@@ -147,7 +147,7 @@ function createSubWindow() {
 
 app.on('ready', () => {
 
-  require('update-electron-app')();
+  require('update-electron-app')({repo: "Azure-Agst/switchrpc/"});
 
   //check for json
   if (!fs.existsSync('games.json')){
