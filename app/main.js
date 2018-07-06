@@ -66,6 +66,7 @@ if (dev) {
   menuTemplate.push({label: 'Inspect', click: function(){subWindow.toggleDevTools()}});
 } else {
   var exampleurl = 'http://azureagst.pw/switchrpc/examplegames.json'
+  require('update-electron-app')({repo: 'Azure-Agst/switchrpc'});
 }
 
 // ============================================================================
