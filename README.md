@@ -1,7 +1,7 @@
 ![Banner](./img/banner.png)
 =====
 
-![license](https://img.shields.io/badge/License-GNU-brightgreen.svg) [![paypal](https://img.shields.io/badge/Donate-paypal.me-blue.svg)](https://paypal.me/AzureAugust)[![Build Status](https://travis-ci.com/Azure-Agst/switchrpc.svg?branch=master)](https://travis-ci.com/Azure-Agst/switchrpc)
+[![Build Status](https://travis-ci.com/Azure-Agst/switchrpc.svg?branch=master)](https://travis-ci.com/Azure-Agst/switchrpc) ![license](https://img.shields.io/badge/License-GNU-brightgreen.svg) [![paypal](https://img.shields.io/badge/Donate-paypal.me-blue.svg)](https://paypal.me/AzureAugust) 
 
 An electron app to show your friends on Discord what Nintendo Switch games you're playing!
 
