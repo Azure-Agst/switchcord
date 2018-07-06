@@ -33,23 +33,32 @@
       "appiconid": "mk8d",
       "states": [
         "Don't Display State",
-        "Online [Solo]",
-        "Online [Duo]",
-        "Online [Tournament]"
+        "Grand Prix",
+        "Time Trials",
+        "VS Race",
+        "Battle",
+        "Racing Online",
+        "Mario Kart TV"
       ]
     },
     "botw": {
       "fullname": "Breath of the Wild",
       "appiconid": "botw",
       "states": [
-        "Don't Display State"
+        "Don't Display State",
+        "Finding Korok Seeds",
+        "Completing Shrines",
+        "Exploring Hyrule"
       ]
     },
     "smodyssey": {
       "fullname": "Super Mario Odyssey",
       "appiconid": "smodyssey",
       "states": [
-        "Don't Display State"
+        "Don't Display State",
+        "Finding Moons",
+        "Saving Peach",
+        "Collecting Purple Coins"
       ]
     },
     "fortnite": {
