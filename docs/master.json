@@ -13,7 +13,8 @@
     "snip",
     "sktt",
     "glfs",
-    "dktf"
+    "dktf",
+    "crash"
   ],
   "games": {
     "splatoon": {
@@ -164,6 +165,17 @@
         "Don't Display State",
         "Going Bananas",
         "Funky Mode"
+      ]
+    },
+    "crash": {
+      "fullname": "Crash Bandicoot N.Sane Trilogy",
+      "appiconid": "crash",
+      "states": [
+        "Playing Crash 1",
+        "Playing Crash 2",
+        "Playing Crash 3",
+        "Doing Time Trials",
+        "Looking for Gems"
       ]
     }
   }
