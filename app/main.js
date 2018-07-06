@@ -8,6 +8,8 @@ const fs = require('fs');
 const request = require('request');
 const DiscordRPC = require('discord-rpc');
 
+console.log(process.platform);
+
 // fancy consts and shit
 const smallicon = path.join(__dirname, 'resources/switch.png');
 const rpc = new DiscordRPC.Client({ transport: 'ipc' });
@@ -31,11 +33,11 @@ let tray = null;
 
 var menuTemplate = [
   {label: 'Settings', type: 'normal', click: function(){
-    if (!subWindow){
+    //if (!subWindow){
       createSubWindow();
-    } else {
-      subWindow.show();
-    }
+    //} else {
+    //  subWindow.open();
+    //}
   }},
   {label: 'Quit', type: 'normal', click: function(){
     app.isQuitting = true;
@@ -136,9 +138,8 @@ function createSubWindow() {
   }));
 
   subWindow.on('close', function (event) {
-    event.preventDefault();
     mainWindow.reload();
-    subWindow.hide();
+    subWindow.destroy();
   });
 }
 
@@ -147,7 +148,9 @@ function createSubWindow() {
 
 app.on('ready', () => {
 
-  require('update-electron-app')({repo: "Azure-Agst/switchrpc/"});
+  if (process.platform != "darwin"){
+    require('update-electron-app')({repo: "Azure-Agst/switchrpc/"});
+  }
 
   //check for json
   if (!fs.existsSync('games.json')){
