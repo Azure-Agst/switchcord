@@ -5,7 +5,15 @@
     "botw",
     "smodyssey",
     "fortnite",
-    "stardew"
+    "stardew",
+    "arms",
+    "doom",
+    "hwde",
+    "krsa",
+    "snip",
+    "sktt",
+    "glfs",
+    "dktf"
   ],
   "games": {
     "splatoon": {
@@ -60,6 +68,92 @@
       "appiconid": "stardew",
       "states": [
         "Don't Display State"
+      ]
+    },
+    "arms": {
+      "fullname": "ARMS",
+      "appiconid": "arms",
+      "states": [
+        "Don't Display State",
+        "Grand Prix",
+        "Party Crash",
+        "Ranked Match",
+        "Training",
+        "1-on-100",
+        "V-Ball",
+        "Hoops",
+        "Skillshot",
+        "Hedlok Scramble"
+      ]
+    },
+    "hwde": {
+      "fullname": "Hyrule Warriors: Definitive Edition",
+      "appiconid": "hwde",
+      "states": [
+        "Don't Display State",
+        "Capturing Keeps",
+        "Taking Outposts",
+        "Executing Combos"
+      ]
+    },
+    "doom": {
+      "fullname": "DOOM",
+      "appiconid": "doom",
+      "states": [
+        "Don't Display State",
+        "Slaying Demons",
+        "Harvesting Souls",
+        "Killing for Glory"
+      ]
+    },
+    "krsa": {
+      "fullname": "Kirby Star Allies",
+      "appiconid": "krsa",
+      "states": [
+        "Don't Display State",
+        "Copying Abilities",
+        "Fighting Bosses",
+        "Teaming Up"
+      ]
+    },
+    "snip": {
+      "fullname": "Snipperclips",
+      "appiconid": "snip",
+      "states": [
+        "Don't Display State",
+        "Noisy Notebook",
+        "Retro Reboot",
+        "Silly Science"
+      ]
+    },
+    "sktt": {
+      "fullname": "Shovel Knight: Treasure Trove",
+      "appiconid": "sktt",
+      "states": [
+        "Don't Display State",
+        "Shovel of Hope",
+        "Plague of Shadows",
+        "Specter of Torment",
+        "King of Cards"
+      ]
+    },
+    "glfs": {
+      "fullname": "Golf Story",
+      "appiconid": "glfs",
+      "states": [
+        "Don't Display State",
+        "Teeing Up",
+        "Hole in One",
+        "Driving Range"
+      ]
+    },
+    "dktf": {
+      "fullname": "Donkey Kong: Tropical Freeze",
+      "appiconid": "dktf",
+      "states": [
+        "Don't Display State",
+        "Going Bananas",
+        "Funky Mode"
       ]
     }
   }

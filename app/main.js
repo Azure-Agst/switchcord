@@ -237,7 +237,7 @@ ipcMain.on('updaterpc', function(event, arg){
       largeImageKey: arg.appiconid,
       largeImageText: arg.gamename,
       smallImageKey: 'switchlogo',
-      smallImageText: 'Nintendo Switch',
+      smallImageText: 'SwitchRPC',
       instance: false,
     });
   }
