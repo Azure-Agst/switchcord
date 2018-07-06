@@ -1,41 +1,48 @@
 osx_image: xcode8.3
-
 dist: trusty
 sudo: false
-
 language: node_js
-node_js: "8"
-
+node_js: '8'
 env:
   global:
-    - ELECTRON_CACHE=$HOME/.cache/electron
-    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-
+  - ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=true
+  - ELECTRON_CACHE=$HOME/.cache/electron
+  - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 os:
-  - linux
-  - osx
-
+- osx
 cache:
   directories:
-  - node_modules
-  - $HOME/.cache/electron
-  - $HOME/.cache/electron-builder
-  - $HOME/.npm/_prebuilds
-
-before_install:
-  - mkdir -p /tmp/git-lfs && curl -L https://github.com/github/git-lfs/releases/download/v2.2.0/git-lfs-$([ "$TRAVIS_OS_NAME" == "linux" ] && echo "linux" || echo "darwin")-amd64-2.2.0.tar.gz | tar -xz -C /tmp/git-lfs --strip-components 1 && /tmp/git-lfs/git-lfs pull
-  - curl -L https://yarnpkg.com/latest.tar.gz | tar xvz && mv dist $HOME/.yarn
-  - export PATH="$HOME/.yarn/bin:$PATH"
-
-install:
-  - yarn
-
+  - "$HOME/.cache/electron-builder/"
+  - "$HOME/.yarn-cache"
+  - "$HOME/.cache/electron"
+  - "$HOME/.cache/electron-builder"
+  - "$HOME/.npm/_prebuilds"
+  - app/node_modules
+before_script:
+  echo $TRAVIS_TAG
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd app; yarn release; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd app; yarn release --mac --win; fi
-
+- cd app;
+- npm install;
+- yarn release --mac --win --linux;
 before_cache:
-  - rm -rf $HOME/.cache/electron-builder/wine
-
+- rm -rf $HOME/.cache/electron-builder/wine
 branches:
-  - "master"
+  only:
+  - master
+before_deploy:
+  - cd ../dist
+  - echo $PWD
+  - export RELEASE_PKG_FILE=$(ls switchrpc*)
+  - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
+deploy:
+  provider: releases
+  overwrite: true
+  skip_cleanup: true
+  file_glob: true
+  draft: true
+  api_key:
+    secure: UKF20sRCgOoZW+VA+xHeuGDD8OF6wk3YRPF8mmzhC/5MvU71UQbFAN31MoCMnFxTOQKQ06NssGPXdY4QrqGrh9WuOEJ0TmituDK7TgmTFRObr8l0hps21ls9pgkkuv/brS0bWbrx2ro5n/vb38kJRPrxdhlqlQHty1TfZKfwPcUskPhkiupoFrKKwZnNhRhpj+3wRuEmvMnoedlQL5HudWPVADQW8bs03hzMHIMhYNTEufayfzq4vYdishyxeX8VmaR7BsmrWyVDQlNp8SGceQjAWtcJH2Sds75bR8LLApltx+frOqo/jNfTMX4wWxazbUhCSb4qT5XGnYwLssC5fjXtqxMSrherPZ9zNAS1kSLwzdDGhMPJjYWSvT0UKYO7zd+AojwU7XcNnj5hX1bfvtf969K4SNowQbZDwJV2w6f0rcFwJTACT+fILxRt3lAAuCEX/Z1EH600Wnfogt4mI3LeN+vGtT+WqDnOsVrR8hep1b6W05Om+XuihOvLxzCGktFLLy5MgudBvJWzTpKg+iUbqEyekDRwBW4I8fxHIS77ne+jGbw1bKKuD7btGVJZVQ16ZmwF3F5bTfAZRfeWWTvj3z/Jkd6PyaYz7ys8z8GqsSPMDamLVgwvIaYxRuSyskX2R1IFIMruqajOwwPBbWYsfxYSFHimOy/11iE7ePY=
+  file:
+    - switchrpc*
+  on:
+    repo: Azure-Agst/switchrpc
