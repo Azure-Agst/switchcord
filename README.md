@@ -13,7 +13,7 @@ Download the most recent releases [here](https://github.com/Azure-Agst/switchrpc
 
 ### Add a Game
 
-As of now, I'm aware that I don't have the most expansive database of switch games, however I'm always up to adding more! Open an issue and fill out the template, and I'll add your game as soon as possible!
+[Click Here to Suggest a Game!](https://github.com/Azure-Agst/switchrpc/issues/new?template=suggestion.md)
 
 ### Packaging
 
