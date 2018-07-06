@@ -147,6 +147,8 @@ function createSubWindow() {
 
 app.on('ready', () => {
 
+  require('update-electron-app')();
+
   //check for json
   if (!fs.existsSync('games.json')){
     console.log("games.json does not exist!")
