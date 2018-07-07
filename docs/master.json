@@ -31,7 +31,14 @@
     "fshelter",
     "wizoflegend",
     "tboi",
-    "mariotennis"
+    "mariotennis",
+    "ys8",
+    "wlf2",
+    "wol",
+    "csp",
+    "lanota",
+    "fastrmx",
+    "xc2"
   ],
   "games": {
     "splatoon": {
@@ -340,6 +347,69 @@
         "Adventure",
         "Tournament",
         "Free Play"
+      ]
+    },
+    "ys8": {
+      "fullname": "Ys VIII: Lacrimoda Of DANA",
+      "appiconid": "ys8",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "wlf2": {
+      "fullname": "Wolfenstein 2: The New Colossus",
+      "appiconid": "wlf2",
+      "states": [
+        "Don't Display State",
+        "Fighting Nazis",
+        "Recouping in the Hub"
+      ]
+    },
+    "wol": {
+      "fullname": "West of Loathing",
+      "appiconid": "wol",
+      "states": [
+        "Don't Display State",
+        "Walking Stupidly",
+        "Doing Stupid Sidequests",
+        "Fighting Reanimated Skeletons",
+        "Cowering from Pyroboves",
+        "Tinkering with El Vibrato Tech",
+        "Wandering Aimlessly",
+        "Trading with Wanderin' Sally"
+      ]
+    },
+    "csp": {
+      "fullname": "Cave Story+",
+      "appiconid": "csp",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "lanota": {
+      "fullname": "Lanota",
+      "appiconid": "lanota",
+      "states": [
+        "Don't Display State",
+        "Enjoying some Music",
+        "Browsing the Songlist"
+      ]
+    },
+    "fastrmx": {
+      "fullname": "Fast RMX",
+      "appiconid": "fastrmx",
+      "states": [
+        "Don't Display State",
+        "Singleplayer",
+        "Online Multiplayer"
+      ]
+    },
+    "xc2": {
+      "fullname": "Xenoblade Chronicles 2",
+      "appiconid": "xc2",
+      "states": [
+        "Don't Display State",
+        "Farming Blades"
       ]
     }
   }
