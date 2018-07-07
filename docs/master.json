@@ -14,7 +14,23 @@
     "sktt",
     "glfs",
     "dktf",
-    "crash"
+    "crash",
+    "mrkb",
+    "butcher",
+    "overcook",
+    "swdig2",
+    "rayman",
+    "picross",
+    "hollowk",
+    "gungeon",
+    "loversspace",
+    "fifa18",
+    "celeste",
+    "npp",
+    "pokequest",
+    "fshelter",
+    "wizoflegend",
+    "tboi"
   ],
   "games": {
     "splatoon": {
@@ -171,12 +187,143 @@
       "fullname": "Crash Bandicoot N.Sane Trilogy",
       "appiconid": "crash",
       "states": [
+        "Don't Display State",
         "Playing Crash 1",
         "Playing Crash 2",
         "Playing Crash 3",
         "Doing Time Trials",
         "Looking for Gems"
       ]
-    }
+    },
+    "mkrb": {
+      "fullname": "Mario + Rabbids Kingdom Battle",
+      "appiconid": "mrkb",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "butcher": {
+      "fullname": "BUTCHER",
+      "appiconid": "butcher",
+      "states": [
+        "Don't Display State",
+        "Speedrun"
+      ]
+    },
+    "overcook": {
+      "fullname": "Overcooked",
+      "appiconid": "overcook",
+      "states": [
+        "Don't Display State",
+        "Campaign",
+        "Versus",
+        "The Lost Morsel",
+        "The Festive Seasoning"
+      ]
+    },
+    "swdig2": {
+      "fullname": "SteamWorld Dig 2",
+      "appiconid": "swdig2",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "rayman": {
+      "fullname": "Mario + Rabbids Kingdom Battle",
+      "appiconid": "rayman",
+      "states": [
+        "Don't Display State",
+        "Kung Foot"
+      ]
+    },
+    "picross": {
+      "fullname": "Picross S",
+      "appiconid": "picross",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "hollowk": {
+      "fullname": "Hollow Knight",
+      "appiconid": "hollowk",
+      "states": [
+        "Don't Display State",
+        "Speedrun",
+        "Soul Steel"
+      ]
+    },
+    "gungeon": {
+      "fullname": "Enter The Gungeon",
+      "appiconid": "gungeon",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "loversspace": {
+      "fullname": "Lovers in a Dangerous Spacetime",
+      "appiconid": "loversspace",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "fifa18": {
+      "fullname": "FIFA 2018",
+      "appiconid": "fifa18",
+      "states": [
+        "Don't Display State",
+        "Ultimate Team"
+      ]
+    },
+    "celeste": {
+      "fullname": "Celeste",
+      "appiconid": "celeste",
+      "states": [
+        "Don't Display State",
+        "A-Side",
+        "B-Side",
+        "C-Side",
+        "Speedrunning",
+        "Collecting Strawberries"
+      ]
+    },
+    "npp": {
+      "fullname": "N++",
+      "appiconid": "npp",
+      "states": [
+        "Don't Display State",
+        "Speedrunning"
+      ]
+    },
+    "pokequest": {
+      "fullname": "Pokemon Quest",
+      "appiconid": "pokequest",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "fshelter": {
+      "fullname": "Fallout Shelter",
+      "appiconid": "fshelter",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "wizoflegend": {
+      "fullname": "Wizard of Legend",
+      "appiconid": "wizoflegend",
+      "states": [
+        "Don't Display State",
+        "Co-op"
+      ]
+    },
+    "tboi": {
+      "fullname": "The Binding of Isaac: Afterbirth++",
+      "appiconid": "tboi",
+      "states": [
+        "Don't Display State",
+        "Hard",
+        "Greed Mode"
+      ]
+    },
   }
 }
