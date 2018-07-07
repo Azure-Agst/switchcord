@@ -33,11 +33,7 @@ let tray = null;
 
 var menuTemplate = [
   {label: 'Settings', type: 'normal', click: function(){
-    //if (!subWindow){
       createSubWindow();
-    //} else {
-    //  subWindow.open();
-    //}
   }},
   {label: 'Quit', type: 'normal', click: function(){
     app.isQuitting = true;
