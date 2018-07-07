@@ -30,7 +30,8 @@
     "pokequest",
     "fshelter",
     "wizoflegend",
-    "tboi"
+    "tboi",
+    "mariotennis"
   ],
   "games": {
     "splatoon": {
@@ -94,7 +95,11 @@
       "fullname": "Stardew Valley",
       "appiconid": "stardew",
       "states": [
-        "Don't Display State"
+        "Don't Display State",
+        "Mining",
+        "Fishing",
+        "Farming",
+        "Boycotting JojaMart"
       ]
     },
     "arms": {
@@ -323,6 +328,18 @@
         "Don't Display State",
         "Hard",
         "Greed Mode"
+      ]
+    },
+    "mariotennis": {
+      "fullname": "Mario Tennis Aces",
+      "appiconid": "mariotennis",
+      "states": [
+        "Don't Display State",
+        "Simple Rules",
+        "Swing Mode",
+        "Adventure",
+        "Tournament",
+        "Free Play"
       ]
     }
   }

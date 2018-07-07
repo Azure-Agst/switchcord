@@ -1,6 +1,8 @@
 # Suggestion to Add Game:
 
-Thanks for wanting to help improve SwitchRPC! If you fill out the form below with all the info, I'll add it to the master json as soon as I can. You can replace the bracketed info, as that's just template to show you how to fill out the page.
+Thanks for wanting to help improve SwitchRPC! If you fill out the form below with all the info, I'll add it to the master json as soon as I can. You can replace the placeholder info, as that's just template to show you how to fill out the page.
+
+**I ask you bear with me, as I have to do all of these manually. It may take a while before I can add your game. If it takes too long, feel free to ping me on [Twitter](https://twitter.com/Azure_Agst) or PM me on [Reddit](https://www.reddit.com/user/Azure_Agst/). Or make a PR. Thanks in advance!**
 
 ### Name of Game:
 
