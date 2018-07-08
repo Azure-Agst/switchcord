@@ -454,6 +454,7 @@
       "fullname": "VVVVVV",
       "appiconid": "vvvvvv",
       "states": [
+        "Don't Display State",
         "Main Story",
         "Time Trials",
         "Intermissions",
