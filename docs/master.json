@@ -38,7 +38,12 @@
     "csp",
     "lanota",
     "fastrmx",
-    "xc2"
+    "xc2",
+    "dbx2",
+    "opus",
+    "binaries",
+    "kamiko",
+    "vvvvvv"
   ],
   "games": {
     "splatoon": {
@@ -410,6 +415,50 @@
       "states": [
         "Don't Display State",
         "Farming Blades"
+      ]
+    },
+    "dbx2": {
+      "fullname": "Dragon Ball Xenoverse 2",
+      "appiconid": "dbx2",
+      "states": [
+        "Don't Display State",
+        "In Lobby",
+        "Doing PQ"
+      ]
+    },
+    "opus": {
+      "fullname": "OPUS: The Day We Found Earth",
+      "appiconid": "opus",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "binaries": {
+      "fullname": "Binaries",
+      "appiconid": "binaries",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "kamiko": {
+      "fullname": "Kamiko",
+      "appiconid": "kamiko",
+      "states": [
+        "Don't Display State",
+        "Playing as Yamato",
+        "Playing as Uzume",
+        "Playing as Hinome"
+      ]
+    },
+    "vvvvvv": {
+      "fullname": "VVVVVV",
+      "appiconid": "vvvvvv",
+      "states": [
+        "Main Story",
+        "Time Trials",
+        "Intermissions",
+        "No-Death Mode",
+        "Flip Mode"
       ]
     }
   }
