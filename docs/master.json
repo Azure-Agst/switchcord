@@ -43,7 +43,13 @@
     "opus",
     "binaries",
     "kamiko",
-    "vvvvvv"
+    "vvvvvv",
+    "gg2",
+    "bctm",
+    "jsab",
+    "fe",
+    "bayonetta",
+    "bayonetta2"
   ],
   "games": {
     "splatoon": {
@@ -460,6 +466,61 @@
         "Intermissions",
         "No-Death Mode",
         "Flip Mode"
+      ]
+    },
+    "gg2": {
+      "fullname": "Gal*Gun 2",
+      "appiconid": "gg2",
+      "states": [
+        "Don't Display State",
+        "Shooting Pheromones",
+        "Sweeping Demons",
+        "With Chiru",
+        "With Risu",
+        "With Nanako",
+        "With Kurona"
+      ]
+    },
+    "bctm": {
+      "fullname": "Bloodstained: Curse of the Moon",
+      "appiconid": "bctm",
+      "states": [
+        "Don't Display State",
+        "Fighting Demons of the Night"
+      ]
+    },
+    "jsab": {
+      "fullname": "Just Shapes and Beats",
+      "appiconid": "jsab",
+      "states": [
+        "Don't Display State",
+        "Jammin in the Menus",
+        "Story Mode",
+        "Challenge Mode",
+        "Party Mode"
+      ]
+    },
+    "fe": {
+      "fullname": "Fe",
+      "appiconid": "fe",
+      "states": [
+        "Don't Display State",
+        "Singing to Animals",
+        "Exploring the Land"
+      ]
+    },
+    "bayonetta": {
+      "fullname": "Bayonetta",
+      "appiconid": "bayonetta",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "bayonetta2": {
+      "fullname": "Bayonetta 2",
+      "appiconid": "bayonetta2",
+      "states": [
+        "Don't Display State"
       ]
     }
   }
