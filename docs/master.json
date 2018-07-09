@@ -263,7 +263,11 @@
       "fullname": "Picross S",
       "appiconid": "picross",
       "states": [
-        "Don't Display State"
+        "Don't Display State",
+        "Picross (Singleplayer)",
+        "Mega Picross (Singleplayer)",
+        "Picross (Multiplayer)",
+        "Mega Picross (Multiplayer)"
       ]
     },
     "hollowk": {
