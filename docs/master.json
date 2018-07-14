@@ -49,7 +49,15 @@
     "jsab",
     "fe",
     "bayonetta",
-    "bayonetta2"
+    "bayonetta2",
+    "few",
+    "sushi",
+    "lanoir",
+    "pokken",
+    "octo",
+    "satpc",
+    "neuro",
+    "fext"
   ],
   "games": {
     "splatoon": {
@@ -523,6 +531,108 @@
     "bayonetta2": {
       "fullname": "Bayonetta 2",
       "appiconid": "bayonetta2",
+      "states": [
+        "Don't Display State"
+      ]
+    },
+    "few": {
+      "fullname": "Fire Emblem Warriors",
+      "appiconid": "few",
+      "states": [
+        "Don't Display State",
+        "Story Mode",
+        "Free Mode",
+        "History Mode: Invisible Ties",
+        "History Mode: The Path is Yours",
+        "History Mode: The Dark Pontifex",
+        "History Mode: Noble Lady of Caelin",
+        "History Mode: Together to the End",
+        "History Mode [DLC]: Hero Challenge",
+        "History Mode [DLC]: Grief",
+        "History Mode [DLC]: Land of Gods",
+        "History Mode [DLC]: Cold Reception",
+        "History Mode [DLC]: A Brush in the Teeth",
+        "History Mode [DLC]: Princess Minerva",
+        "History Mode [DLC]: Knorda Market",
+        "History Mode [DLC]: Scion of Legend",
+        "History Mode [DLC]: Emmeryn",
+        "History Mode [DLC]: Caravan Dancer",
+        "Grinding for supports",
+        "Farming for materials",
+        "Hunting for Anna"
+      ]
+    },
+    "sushi": {
+      "fullname": "Sushi Striker: The Way of Sushido",
+      "appiconid": "sushi",
+      "states": [
+        "Don't Display State",
+        "Eating sushi",
+        "Recruiting sushi sprites",
+        "Defeating the Empire",
+        "Online Tasteful Battles",
+        "Online Chaos Battles"
+      ]
+    },
+    "lanoir": {
+      "fullname": "L.A Noire",
+      "appiconid": "lanoir",
+      "states": [
+        "Don't Display State",
+        "Investigating",
+        "Cruising around"
+      ]
+    },
+    "pokken": {
+      "fullname": "Pokken Tournament DX",
+      "appiconid": "pokken",
+      "states": [
+        "Don't Display State",
+        "Solo Campaign",
+        "Local Matches",
+        "Online Matches",
+        "Practice Mode"
+      ]
+    },
+    "octo": {
+      "fullname": "Octopath Traveler",
+      "appiconid": "octo",
+      "states": [
+        "Don't Display State",
+        "Questing",
+        "Hunting monsters",
+        "Grinding",
+        "Playing as Ophilia",
+        "Playing as Cyrus",
+        "Playing as Tressa",
+        "Playing as Olberic",
+        "Playing as Primrose",
+        "Playing as Alfyn",
+        "Playing as Therion",
+        "Playing as H'aanit"
+      ]
+    },
+    "satpc": {
+      "fullname": "Shantae and the Pirate's Curse",
+      "appiconid": "satpc",
+      "states": [
+        "Don't Display State",
+        "Grinding 'Super Shantae Nab'"
+      ]
+    },
+    "neuro": {
+      "fullname": "Neurovoider",
+      "appiconid": "neuro",
+      "states": [
+        "Don't Display State",
+        "Arcade Mode",
+        "Rogue Mode",
+        "Voider Mode"
+      ]
+    },
+    "fext": {
+      "fullname": "Fate/Extella: The Umbral Star",
+      "appiconid": "fext",
       "states": [
         "Don't Display State"
       ]
