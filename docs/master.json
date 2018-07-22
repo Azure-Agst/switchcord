@@ -82,7 +82,7 @@
       ]
     },
     "mk8d": {
-      "fullname": "Mariokart 8 Deluxe",
+      "fullname": "Mario Kart 8 Deluxe",
       "appiconid": "mk8d",
       "states": [
         "Don't Display State",
@@ -224,7 +224,7 @@
       ]
     },
     "crash": {
-      "fullname": "Crash Bandicoot N.Sane Trilogy",
+      "fullname": "Crash Bandicoot N. Sane Trilogy",
       "appiconid": "crash",
       "states": [
         "Don't Display State",
@@ -277,7 +277,7 @@
       ]
     },
     "picross": {
-      "fullname": "Picross S",
+      "fullname": "PICROSS S",
       "appiconid": "picross",
       "states": [
         "Don't Display State",
@@ -602,7 +602,7 @@
       ]
     },
     "lanoir": {
-      "fullname": "L.A Noire",
+      "fullname": "L.A. Noire",
       "appiconid": "lanoir",
       "states": [
         "Don't Display State",
@@ -706,7 +706,7 @@
       ]
     },
     "oxnfr": {
-      "fullname": "Oxenfree",
+      "fullname": "OXENFREE",
       "appiconid": "oxnfr",
       "states": [
         "Don't Display State",
