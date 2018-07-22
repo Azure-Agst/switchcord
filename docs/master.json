@@ -300,7 +300,16 @@
       "fullname": "Enter The Gungeon",
       "appiconid": "gungeon",
       "states": [
-        "Don't Display State"
+        "Don't Display State",
+        "In The Gungeon",
+        "Challenge Mode",
+        "Boss Rush",
+        "Chamber 1 - Keep of the Lead Lord",
+        "Chamber 2 - Gungeon Proper",
+        "Chamber 3 - Black Powder Mine",
+        "Chamber 4 - Hollow",
+        "Chamber 5 - Forge",
+        "Chamber 6 - Bullet Hell"
       ]
     },
     "loversspace": {
@@ -415,7 +424,16 @@
       "fullname": "Cave Story+",
       "appiconid": "csp",
       "states": [
-        "Don't Display State"
+        "Don't Display State",
+        "Story Mode",
+        "Curly Story",
+        "Jukebox",
+        "Machine Gun Challenge",
+        "Sand Pit",
+        "Sanctuary Time Attack",
+        "Boss Attack",
+        "Wind Fortress",
+        "Nemesis Challenge"
       ]
     },
     "lanota": {
@@ -744,6 +762,18 @@
         "Blue Spheres",
         "Mean Bean Machine",
         "D.A. Garden"
+      ]
+    },
+    "sforces": {
+      "fullname": "Sonic Forces",
+      "appiconid": "sforces",
+      "states": [
+        "Don't Display State",
+        "Viewing the World Map",
+        "Playing Episode Shadow",
+        "Playing in a Sonic Stage",
+        "Playing in a Classic Stage",
+        "Playing in an Avatar Stage"
       ]
     }
   }
