@@ -57,7 +57,16 @@
     "octo",
     "satpc",
     "neuro",
-    "fext"
+    "fext",
+    "mcse",
+    "skyrim",
+    "srr",
+    "puyo",
+    "oxnfr",
+    "monopoly",
+    "jpp2",
+    "taiko",
+    "smania"
   ],
   "games": {
     "splatoon": {
@@ -635,6 +644,106 @@
       "appiconid": "fext",
       "states": [
         "Don't Display State"
+      ]
+    },
+    "mcse": {
+      "fullname": "Minecraft Nintendo Switch Edition",
+      "appiconid": "mcse",
+      "states": [
+        "Don't Display State",
+        "Creative Mode",
+        "Survival Mode"
+      ]
+    },
+    "skyrim": {
+      "fullname": "The Elder Scrolls V: Skyrim",
+      "appiconid": "skyrim",
+      "states": [
+        "Don't Display State",
+        "Fighting a dragon",
+        "Helping citizen",
+        "Looting a dungeon",
+        "Building a house"
+      ]
+    },
+    "srr": {
+      "fullname": "Shining Resonance Refrain",
+      "appiconid": "srr",
+      "states": [
+        "Don't Display State",
+        "Original Mode",
+        "Refrain Mode"
+      ]
+    },
+    "puyo": {
+      "fullname": "Puyo Puyo Tetris",
+      "appiconid": "puyo",
+      "states": [
+        "Don't Display State",
+        "Popping Puyos",
+        "Clearing Tetrominoes",
+        "Adventure",
+        "Arcade",
+        "Online"
+      ]
+    },
+    "oxnfr": {
+      "fullname": "Oxenfree",
+      "appiconid": "oxnfr",
+      "states": [
+        "Don't Display State",
+        "On ferry to Edwards Island",
+        "Using radio",
+        "Getting advice from reflection",
+        "Giving advice as reflection"
+      ]
+    },
+    "monopoly": {
+      "fullname": "Monopoly for Nintendo Switch",
+      "appiconid": "monopoly",
+      "states": [
+        "Don't Display State",
+        "Rolling dice",
+        "Taking turns",
+        "Waiting for other players",
+        "Buying house",
+        "Purchasing hotel",
+        "In jail"
+      ]
+    },
+    "jpp2": {
+      "fullname": "Jackbox Party Pack 2",
+      "appiconid": "jpp2",
+      "states": [
+        "Don't Display State",
+        "In the menu",
+        "Playing Fibbage 2",
+        "Playing Earwax",
+        "Playing Bidiots",
+        "Playing Quiplash XL",
+        "Playing Bomb Corp"
+      ]
+    },
+    "taiko": {
+      "fullname": "Taiko No Tatsujin",
+      "appiconid": "taiko",
+      "states": [
+        "Don't Display State",
+        "Rhythm Game",
+        "Mini Games"
+      ]
+    },
+    "smania": {
+      "fullname": "Sonic Mania",
+      "appiconid": "smania",
+      "states": [
+        "Don't Display State",
+        "Encore Mode",
+        "Time Attack",
+        "Competition",
+        "Blue Spheres",
+        "Mean Bean Machine",
+        "D.A. Garden"
       ]
     }
   }
