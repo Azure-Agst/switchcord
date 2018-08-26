@@ -1,14 +1,23 @@
-![Banner](./img/banner.png)
+# Switchcord
+(Previously known as SwitchRPC)
 
 ### [Downloads](#downloads) | [Add a Game](#add-a-game) | [Build](#build) | [Packaging](#packaging) | [Acknowledgements](#acknowledgements)
 
 -----
 
-[![Build Status](https://travis-ci.com/Azure-Agst/switchrpc.svg?branch=master)](https://travis-ci.com/Azure-Agst/switchrpc) ![license](https://img.shields.io/badge/License-GNU-brightgreen.svg) [![paypal](https://img.shields.io/badge/Donate-paypal.me-blue.svg)](https://paypal.me/AzureAugust) 
+[![Build Status](https://travis-ci.com/Azure-Agst/switchcord.svg?branch=master)](https://travis-ci.com/Azure-Agst/switchcord) ![license](https://img.shields.io/badge/License-GNU-brightgreen.svg) [![paypal](https://img.shields.io/badge/Donate-paypal.me-blue.svg)](https://paypal.me/AzureAugust) 
 
 An electron app to show your friends on Discord what Nintendo Switch games you're playing!
 
 If you like the app and have an idea, do consider forking and making a pull request! Or, consider [buying me a cup of coffee](https://paypal.me/AzureAugust) to keep the development moving!
+
+-----
+
+## NOTE: THIS APP IS IN NO WAY AFFILLIATED WITH NINTENZONE'S SWITCHRPC APPLICATION!
+
+Although both their app and mine perform the same function, they were the first to the name, so I gave it to them. I'm also not able to maintain this properly; their app is more maintained, so you can use their service for snappier support. If you still want to use mine, feel free to fork and add changes. Either way, please stop bugging them for this app's support. Thanks!
+
+-----
 
 ### Downloads
 
@@ -43,4 +52,4 @@ I'd like to thank the following people for helping make this project possible:
 
 -----
 
-SwitchRPC (c) 2018 @Azure_Agst, Nintendo Switch is a trademark of Nintendo.
+Switchcord (Formerly known as SwitchRPC) (c) 2018 @Azure_Agst, Nintendo Switch is a trademark of Nintendo.
