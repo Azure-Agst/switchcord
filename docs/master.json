@@ -1,5 +1,6 @@
 {
   "gamelist": [
+    "IMPORTANT",
     "splatoon",
     "mk8d",
     "botw",
@@ -69,6 +70,13 @@
     "smania"
   ],
   "games": {
+    "IMPORTANT": {
+      "fullname": "PLEASE SEE GITHUB",
+      "appiconid": "home",
+      "states": [
+        "Don't Display State"
+      ]
+    },
     "splatoon": {
       "fullname": "Splatoon 2",
       "appiconid": "splatoon",
