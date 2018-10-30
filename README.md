@@ -13,19 +13,15 @@ If you like the app and have an idea, do consider forking and making a pull requ
 
 -----
 
-## NOTE: THIS APP IS IN NO WAY AFFILLIATED WITH NINTENZONE'S SWITCHRPC APPLICATION!
+## NOTE: THIS PROJECT IS NO LONGER BRING MAINTAINED!
 
-Although both their app and mine perform the same function, they were the first to the name, so I gave it to them. I'm also not able to maintain this properly; their app is more maintained, so you can use their service for snappier support. If you still want to use mine, feel free to fork and add changes. Either way, please stop bugging them for this app's support. Thanks!
+**May I recommend using Random0666's [SwitchPresence](https://github.com/Random0666/SwitchPresence) sysmodule for atmosphere CFW, or Nintenzone's [SwitchRPC](https://github.com/NintenZone/SwitchRPC) project if you're not into CFW. Both are still maintained and do a better job than this app.**
 
 -----
 
 ### Downloads
 
 Download the most recent releases [here](https://github.com/Azure-Agst/switchrpc/releases)!
-
-### Add a Game
-
-[Click Here to Suggest a Game!](https://github.com/Azure-Agst/switchrpc/issues/new?template=suggestion.md)
 
 ### Build
 
