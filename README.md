@@ -1,29 +1,30 @@
+| <h1>NOTE: THIS PROJECT IS NO LONGER BRING MAINTAINED AND ABSOLUTELY MANGLED!</h1> |
+|-----|
+|Enough people have messaged me on Reddit/Discord asking for support on this project that I decided to revamp it entirely. Unfortunately, it's hard for me to recreate my own freaking dev environment I used to make this app, with requests being reprecated and all, so I decided to remake it using my current language of choice: Python (w/ PyQT5). I've been working on it between work and school and personal matters, but will take time. Coming soon™. Thanks for your patience.<br><br>I've also disabled issues on this project because I'm using a sqlite database as a main driver for the new app, so more I dont have to deal with countless issues being opened asking to be added to a central JSON file hosted on a domain that doesn't exist anymore. (That was stupid, why did I use that model in the first place?)<br><br>**In the meantime, way I recommend using HeadpatServices's [SwitchPresence-Rewritten](https://github.com/HeadpatServices/SwitchPresence-Rewritten) if you have atmosphere CFW, or Nintenzone's [SwitchRPC](https://github.com/NintenZone/SwitchRPC) project if you're not into that kind of stuff. Both are still maintained (i think) and do a better job than this javascript mess anyways.**<br><br>-Azure|
+
+
 # Switchcord
 (Previously known as SwitchRPC)
 
-### [Downloads](#downloads) | [Add a Game](#add-a-game) | [Build](#build) | [Packaging](#packaging) | [Acknowledgements](#acknowledgements)
+-----
+
+### [Downloads](#downloads) | [Build](#build) | [Packaging](#packaging) | [Acknowledgements](#acknowledgements)
 
 -----
 
-[![Build Status](https://travis-ci.com/Azure-Agst/switchcord.svg?branch=master)](https://travis-ci.com/Azure-Agst/switchcord) ![license](https://img.shields.io/badge/License-GNU-brightgreen.svg) [![paypal](https://img.shields.io/badge/Donate-paypal.me-blue.svg)](https://paypal.me/AzureAugust) 
+[![Build Status](https://travis-ci.com/Azure-Agst/switchcord.svg?branch=master)](https://travis-ci.com/Azure-Agst/switchcord) ![license](https://img.shields.io/badge/License-GNU-brightgreen.svg)
 
 An electron app to show your friends on Discord what Nintendo Switch games you're playing!
 
-If you like the app and have an idea, do consider forking and making a pull request! Or, consider [buying me a cup of coffee](https://paypal.me/AzureAugust) to keep the development moving!
-
------
-
-## NOTE: THIS PROJECT IS NO LONGER BRING MAINTAINED!
-
-**May I recommend using Random0666's [SwitchPresence](https://github.com/Random0666/SwitchPresence) sysmodule for atmosphere CFW, or Nintenzone's [SwitchRPC](https://github.com/NintenZone/SwitchRPC) project if you're not into CFW. Both are still maintained and do a better job than this app.**
-
------
+If you like the app and have an idea, do consider forking and making a pull request!
 
 ### Downloads
 
 Download the most recent releases [here](https://github.com/Azure-Agst/switchrpc/releases)!
 
 ### Build
+
+**Warning: I couldn't even get this to work! Try at your own peril!**
 
 To build, clone the repo, and run `cd app && npm install`. This will install electron and all dependencies for a development environment. You can start the app by running `npm start` while inside the app directory.
 
